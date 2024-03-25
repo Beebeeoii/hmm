@@ -47,15 +47,15 @@ def scrape(reddit, subreddit_name, filepath):
             print(f'Scrapped: Post #{post_counter} with {comment_counter} comments')
 
 if __name__ == "__main__":
-    subreddit_name = "nus"
-    out_filepath = "../data/train.txt"
+    subreddit_name = os.getenv('SUBREDDIT_NAME')
+    out_filepath = f"../data/{subreddit_name}.txt"
 
     client_id, client_secret, user_agent = load_credentials()
     reddit = praw.Reddit(
         client_id=client_id,
         client_secret=client_secret,
         user_agent=user_agent,
-        ratelimit_seconds=100
+        ratelimit_seconds=1000
     )
 
     scrape(reddit, subreddit_name, out_filepath)
