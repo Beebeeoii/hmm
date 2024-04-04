@@ -6,11 +6,18 @@ For more information on POS tagging using HMM and Viterbi, do look at [Speech an
 
 ## Getting Started
 
-All the source code can be found in `src/`.
+All the source code can be found in `src/`. Ensure that you have installed the requirements listed in `requirements.txt`.
 
 ### Gathering Data
 
-1. Make a copy of `.env.example` and rename it to `.env`
+1. Create an `.env` file with following environment variables.
+
+```txt
+REDDIT_CLIENT_ID=
+REDDIT_CLIENT_SECRET=
+REDDIT_USER_AGENT=HS2914
+SUBREDDIT_NAME=
+```
 
 2. Fill in `REDDIT_CLIENT_ID` and `REDDIT_CLIENT_SECRET` after [creating a new app on Reddit](https://www.reddit.com/prefs/apps/).
 
